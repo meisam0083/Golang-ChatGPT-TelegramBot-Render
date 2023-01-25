@@ -41,7 +41,7 @@ func getChatGPTresponse(ctx context.Context, question string) string {
 func main() {
 	ctx := context.Background()
 	bot := tbot.New(os.Getenv("TELEGRAM_BOT_TOKEN"),
-		tbot.WithWebhook("", ":8080"))
+		tbot.WithWebhook("https://golang-chatgpt-telegrambot-render.onrender.com", ":8080"))
 	c := bot.Client() //Please add your Render URL between "". 請在引號中加入你的Render網址
 
 	bot.HandleMessage(".*human:*", func(m *tbot.Message) { //The AI must be triggered by the keyword "human:"
